@@ -8,12 +8,12 @@
           insert into user (username, password) VALUES (#{username}, #{password});
       </insert>-->
     <insert id="insertRole">
-        insert into user_roles (user_id, roles_id) VALUES (#{userId}, #{roleId});
+        insert into user_role (user_id, roles_id) VALUES (#{userId}, #{roleId});
     </insert>
 
 
     <select id="findRoleById" resultType="Role">
-      select id, name, nameZh from role where id = #{roleId}
+      select id, role_name, role_desc from role where id = #{roleId}
     </select>
 
     <select id="findByUsername" parameterType="String" resultType="User">

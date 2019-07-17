@@ -10,7 +10,7 @@ CREATE TABLE `role` (
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `user_img` varchar(255) DEFAULT NULL,
   `updatetime` datetime DEFAULT NULL,
   `status` char(1) DEFAULT NULL,
