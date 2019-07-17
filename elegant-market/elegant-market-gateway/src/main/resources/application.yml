@@ -1,0 +1,56 @@
+
+server:
+  port: 6565
+
+spring:
+  application:
+    name: grateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: service_to_managesys
+          uri: lb://tcbj-yytsg-managesys #��̨�������
+          predicates:
+            - Path=/tcbj-yytsg-managesys/**
+          filters:
+            - StripPrefix=1
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka1:8081/eureka/
+
+---
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/study_mybaties_plus?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT mapper
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000  #����API������·��ת�������HystrixCommandִ�г�ʱʱ��
+
+
