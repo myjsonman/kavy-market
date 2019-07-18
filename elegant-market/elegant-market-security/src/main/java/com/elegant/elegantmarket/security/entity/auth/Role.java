@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import lombok.Builder;
 import lombok.Data;
+
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -24,19 +26,18 @@ public class Role implements Serializable {
     /**
     * rloe_name
     */
-    private String rloeName;
+    private String roleName;
 
     /**
     * updatetime
     */
-    private Date updatetime;
+    private Timestamp updatetime;
 
     /**
     * role_desc
     */
     private String roleDesc;
 
-  /*  public Role() {
-    }*/
+
 
 }

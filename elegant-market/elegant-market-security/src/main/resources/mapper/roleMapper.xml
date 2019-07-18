@@ -8,7 +8,7 @@
           insert into user (username, password) VALUES (#{username}, #{password});
       </insert>-->
     <insert id="insertRole">
-        insert into user_role (user_id, roles_id) VALUES (#{userId}, #{roleId});
+        insert into user_roles (user_id, role_id) VALUES (#{userId}, #{roleId});
     </insert>
 
 
@@ -20,7 +20,7 @@
     SELECT id, username, password from user where username = #{username};
     </select>
     <select id="findRoleByUserId" resultType="Role">
-        select * from role where id in (SELECT roles_id from user_roles where user_id = #{userId});
+        select * from role where id in (SELECT role_id from user_roles where user_id = #{userId});
     </select>
 
 
