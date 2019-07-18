@@ -36,6 +36,9 @@ public class ResultJson<T> implements Serializable{
     public ResultJson(ResultCode resultCode) {
         setResultCode(resultCode);
     }
+    public ResultJson() {
+
+    }
 
     public ResultJson(ResultCode resultCode, T data) {
         setResultCode(resultCode);

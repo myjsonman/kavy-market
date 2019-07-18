@@ -8,6 +8,7 @@ public interface UserMapper  extends BaseMapper<User>{
 
     UserDetail findByUsername(String username);
 
+    User queryByUsername(String username);
     /**
      * 创建新用户
      * @param userDetail

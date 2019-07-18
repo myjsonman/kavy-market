@@ -19,7 +19,7 @@ public interface IUserService {
      * 注册用户
      * @return
      */
-    ResultJson register(UserDetail userDetail);
+    void register(UserDetail userDetail);
 
 
     /**

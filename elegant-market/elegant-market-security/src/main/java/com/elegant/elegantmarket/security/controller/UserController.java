@@ -72,8 +72,9 @@ public class UserController {
         if (StringUtils.isAnyBlank(user.getUsername(), user.getPassword())) {
             return ResultJson.failure(ResultCode.BAD_REQUEST);
         }
-       UserDetail userDetail = new UserDetail(user.getUsername(), user.getPassword(), Role.builder().id(1l).build());
-        return ResultJson.ok(userService.register(userDetail));
+        UserDetail userDetail = new UserDetail(user.getUsername(), user.getPassword(), Role.builder().id(1l).build());
+        userService.register(userDetail);
+        return ResultJson.success();
     }
 
     @GetMapping(value = "refresh")

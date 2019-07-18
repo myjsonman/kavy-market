@@ -11,6 +11,9 @@
     SELECT id, username, password from user where username = #{username};
     </select>
 
+    <select id="queryByUsername" parameterType="String" resultType="User">
+    SELECT id, username, password from user where username = #{username};
+    </select>
     <update id="update" parameterType="UserDetail">
         UPDATE user
         <set>

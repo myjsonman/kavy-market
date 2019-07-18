@@ -45,7 +45,7 @@ public class JwtUtils {
             long userId = getUserIdFromToken(token);
             String username = claims.getSubject();
             String roleName = claims.get(CLAIM_KEY_AUTHORITIES).toString();
-            Role role = Role.builder().rloeName(roleName).build();
+            Role role = Role.builder().roleName(roleName).build();
             userDetail = new UserDetail(userId, username, role,"");
         } catch (Exception e) {
             userDetail = null;

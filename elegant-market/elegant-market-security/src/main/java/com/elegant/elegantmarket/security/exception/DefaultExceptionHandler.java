@@ -1,4 +1,4 @@
-package com.elegant.elegantmarket.common.exception;
+package com.elegant.elegantmarket.security.exception;
 
 import com.elegant.elegantmarket.common.result.ResultCode;
 import com.elegant.elegantmarket.common.result.ResultJson;
